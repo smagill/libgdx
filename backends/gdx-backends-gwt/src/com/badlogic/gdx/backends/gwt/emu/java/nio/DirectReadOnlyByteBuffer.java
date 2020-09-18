@@ -58,10 +58,12 @@ final class DirectReadOnlyByteBuffer extends DirectByteBuffer {
 		return true;
 	}
 
+	@Override
 	protected byte[] protectedArray () {
 		throw new ReadOnlyBufferException();
 	}
 
+	@Override
 	protected int protectedArrayOffset () {
 		throw new ReadOnlyBufferException();
 	}
@@ -78,26 +80,32 @@ final class DirectReadOnlyByteBuffer extends DirectByteBuffer {
 		return order() == ByteOrder.nativeOrder() ? DirectReadOnlyIntBufferAdapter.wrap(this) : super.asIntBuffer();
 	}
 
+	@Override
 	public ShortBuffer asShortBuffer () {
 		return order() == ByteOrder.nativeOrder() ? DirectReadOnlyShortBufferAdapter.wrap(this) : super.asShortBuffer();
 	}
 
+	@Override
 	public ByteBuffer put (byte b) {
 		throw new ReadOnlyBufferException();
 	}
 
+	@Override
 	public ByteBuffer put (int index, byte b) {
 		throw new ReadOnlyBufferException();
 	}
 
+	@Override
 	public ByteBuffer put (byte[] src, int off, int len) {
 		throw new ReadOnlyBufferException();
 	}
 
+	@Override
 	public ByteBuffer putDouble (double value) {
 		throw new ReadOnlyBufferException();
 	}
 
+	@Override
 	public ByteBuffer putDouble (int index, double value) {
 		throw new ReadOnlyBufferException();
 	}
@@ -110,10 +118,12 @@ final class DirectReadOnlyByteBuffer extends DirectByteBuffer {
 		throw new ReadOnlyBufferException();
 	}
 
+	@Override
 	public ByteBuffer putInt (int value) {
 		throw new ReadOnlyBufferException();
 	}
 
+	@Override
 	public ByteBuffer putInt (int index, int value) {
 		throw new ReadOnlyBufferException();
 	}
@@ -126,6 +136,7 @@ final class DirectReadOnlyByteBuffer extends DirectByteBuffer {
 		throw new ReadOnlyBufferException();
 	}
 
+	@Override
 	public ByteBuffer putShort (int index, short value) {
 		throw new ReadOnlyBufferException();
 	}

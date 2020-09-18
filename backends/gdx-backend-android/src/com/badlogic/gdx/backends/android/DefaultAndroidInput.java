@@ -717,6 +717,7 @@ public class DefaultAndroidInput implements AndroidInput {
 	 * >SensorManager#getRotationMatrix(float[], float[], float[], float[])</a>. Does not manipulate the matrix if the platform
 	 * does not have an accelerometer and compass, or a rotation vector sensor.
 	 * @param matrix */
+	@Override
 	public void getRotationMatrix (float[] matrix) {
 		if (rotationVectorAvailable)
 			SensorManager.getRotationMatrixFromVector(matrix, rotationVectorValues);
